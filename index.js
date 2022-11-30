@@ -48,9 +48,15 @@ function getOrderField(foodId){
 }
 
 function removeFromOrder(removeId) {
-    orderArray.map(meal => {
-        if(meal.id === removeId) orderArray.splice(meal, 1)
+    const targetObj = orderArray.filter(meal => {
+        return meal.id === removeId
+    })[0]
+    const indexToDelete = orderArray.findIndex(order => {
+        return order.id === targetObj.id
     })
+    
+    orderArray.splice(indexToDelete, 1)
+    render()
 }
 
 function getMenuHtml(){    
