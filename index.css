@@ -1,0 +1,99 @@
+body {
+    margin: 0 auto;
+    font-family: 'Smythe', 'Inter', cursive;
+    width: 600px;
+    border: 1px solid red
+}
+
+.container{
+    padding: 0 40px;
+}
+
+h1, h2, p{
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 18px;
+}
+
+header {
+    background-image: url('images/bg-img1.jpg');
+    background-size: cover;
+    padding: 30px 0 50px;
+    color: white;
+}
+
+.section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 1.75em 0;
+}
+
+.food-selection{
+    display: flex;
+    align-items: center;
+}
+
+.food-img{
+    margin-right: 30px;
+}
+
+.section button{
+    font-size: 28px;
+    font-family: 'Inter';
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #999;
+    padding: 5px 12px;
+}
+.section button:hover{
+    transform: scale(1.2);
+    background-color: whitesmoke;
+}
+
+/* ordering section */
+
+.order{
+    text-align: center;
+    padding: 5em 0 1em 0;
+}
+
+.order-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 20px 0;
+    border-bottom: 2px solid gray;
+}
+
+#remove{
+    font-family: 'Arial';
+    font-size: 12px;
+    padding-left: 20px;
+    color: #bbb;
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 40px 0;
+}
+
+.order button{
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 4px;
+}
+
