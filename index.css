@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
     font-family: 'Smythe', 'Inter', cursive;
     width: 600px;
-    border: 1px solid red
+    border: 1px solid lightgray;
 }
 
 .container{
@@ -78,6 +78,7 @@ header {
     font-size: 12px;
     padding-left: 20px;
     color: #bbb;
+    cursor: pointer;
 }
 
 .total-price{
