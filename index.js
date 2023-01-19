@@ -11,7 +11,13 @@ document.addEventListener('click', (e) => {
 
 function handleAddBtn(foodId){
     const targetMealObj = menuArray.filter(meal => meal.id === foodId)[0]
-    orderArray.push(targetMealObj)
+    const duplicate = orderArray.includes(targetMealObj)
+    if(!duplicate) orderArray.push(targetMealObj)
+    else orderArray.filter(meal => {
+        if (meal.id === foodId) {
+            meal.amount += 1
+        }
+    })
     
     // const deleteDuplicateMeal = orderArray.filter((item, index) => {
     //     const isdDuplicate = orderArray.indexOf(item) === index
@@ -20,8 +26,11 @@ function handleAddBtn(foodId){
     //     }
     // })
 
-    const totalCost = orderArray.reduce((acc, price) => acc + price.price, 0)
-    console.log(totalCost)
+    const totalCost = orderArray.reduce((acc, meal) => {
+        acc + meal.price * meal.amount
+        
+        console.log(acc + meal.price * meal.amount)
+    }, 0)
 
     getOrderHtml(totalCost)
 }
@@ -32,7 +41,9 @@ function getOrderHtml(totalCost) {
         orderHtml += `
         <div class="order-detail">
             <h2>${item.name}
-                <span data-remove=${item.id} id="remove">remove</span>
+                <span data-remove=${item.id} class="button remove-btn">
+                    remove
+                </span>
             </h2>        
             <p>$${item.price}</p>
         </div>
@@ -81,7 +92,7 @@ function getMenuHtml(){
                     <p>$${meal.price}</p>  
                 </div>  
             </div>
-            <button data-btn="${meal.id}">+</button>
+            <button class="button" data-btn="${meal.id}">+</button>
         </div>
     </div>
         `   

@@ -21,6 +21,10 @@ p {
     font-size: 18px;
 }
 
+.button {
+    cursor: pointer;
+}
+
 header {
     background-image: url('images/bg-img1.jpg');
     background-size: cover;
@@ -73,12 +77,11 @@ header {
     border-bottom: 2px solid gray;
 }
 
-#remove{
+.remove-btn{
     font-family: 'Arial';
     font-size: 12px;
     padding-left: 20px;
     color: #bbb;
-    cursor: pointer;
 }
 
 .total-price{
