@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,6 +19,18 @@
     <div class="order" id="total-order">
         <div id="order-details"></div>
         <!-- order counting -->
+    </div>
+
+    <button class="button complete-order-btn">Complete order</button>
+
+    <div class="hidden pay-form">
+        <form class="pay-details">
+            <h1>Enter card details</h1>
+            <input type="text" placeholder="Enter your name" />
+            <input type="text" placeholder="Enter card number" />
+            <input type="text" placeholder="Enter CVV" />
+            <button class="button complete-order-btn">Pay</button>
+        </form>
     </div>
     <script src="index.js" type="module"></script>
 </body>

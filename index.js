@@ -1,4 +1,5 @@
 import { menuArray } from './data.js'
+
 const orderArray = []
 
 document.addEventListener('click', (e) => {
@@ -18,50 +19,15 @@ function handleAddBtn(foodId){
             meal.amount += 1
         }
     })
-    
-    // const deleteDuplicateMeal = orderArray.filter((item, index) => {
-    //     const isdDuplicate = orderArray.indexOf(item) === index
-    //     if (isdDuplicate) {
-    //         return isdDuplicate
-    //     }
-    // })
 
-    const totalCost = orderArray.reduce((acc, meal) => {
-        acc + meal.price * meal.amount
-        
-        console.log(acc + meal.price * meal.amount)
-    }, 0)
-
-    getOrderHtml(totalCost)
+    getOrderHtml()
 }
 
-function getOrderHtml(totalCost) {
-    let orderHtml = ``
-    orderArray.map(item => {
-        orderHtml += `
-        <div class="order-detail">
-            <h2>${item.name}
-                <span data-remove=${item.id} class="button remove-btn">
-                    remove
-                </span>
-            </h2>        
-            <p>$${item.price}</p>
-        </div>
-    `
-    })
-    
-    let totalOrder = `
-        <div class="container">
-            <h2>Your order</h2>
-            ${orderHtml}
-            <div class="total-price">
-                <h2>Total price:</h2>
-                <p>$${totalCost}</p>
-            </div>
-            <button>Complete order</button>
-        </div>
-    `
-    document.getElementById('total-order').innerHTML = totalOrder
+function totalCost() {
+    const totalCost = orderArray.reduce((acc, meal) => {
+        return acc + meal.price * meal.amount        
+    }, 0)
+    return totalCost
 }
 
 function handleRemoveBtn(foodId) {
@@ -72,10 +38,52 @@ function handleRemoveBtn(foodId) {
         return order.id === targetObj.id
     })
     
-    orderArray.splice(indexToDelete, 1)
-    console.log(orderArray)
+    orderArray.filter(meal => {
+        if (meal.id === foodId && meal.amount > 0) {
+            meal.amount -= 1
+        } else if (meal.amount < 2) {
+            orderArray.splice(indexToDelete, 1)
+        }
+    })
+
     getOrderHtml()
 }
+
+function getOrderHtml() {
+    let orderHtml = ``
+    orderArray.map(item => {
+        orderHtml += `
+        <div class="order-detail">
+            <h2>${item.name} ${item.amount}
+                <span data-remove=${item.id} class="button remove-btn">
+                    remove
+                </span>
+            </h2>        
+            <p>$${item.price * item.amount}</p>
+        </div>
+    `
+    })
+    
+    let totalOrder = `
+        <div class="container">
+            <h2>Your order</h2>
+            ${orderHtml}
+            <div class="total-price">
+                <h2>Total price:</h2>
+                <p>$${totalCost()}</p>
+            </div>
+            
+        </div>
+    `
+    document.getElementById('total-order').innerHTML = totalOrder
+}
+
+const completeOrderBtn = document.querySelector('.complete-order-btn')
+const payForm = document.querySelector('.pay-form')
+
+completeOrderBtn.addEventListener('click', () => {
+    payForm.classList.remove('hidden')
+})
 
 function getMenuHtml(){    
     let menuHtml = ``

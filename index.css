@@ -1,6 +1,6 @@
 body {
     margin: 0 auto;
-    font-family: 'Smythe', 'Inter', cursive;
+    font-family: 'Poppins', sans-serif;
     width: 600px;
     border: 1px solid lightgray;
 }
@@ -14,11 +14,11 @@ h1, h2, p{
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 p {
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .button {
@@ -90,14 +90,35 @@ header {
     padding: 20px 0 40px 0;
 }
 
-.order button{
+.complete-order-btn{
     font-weight: bold;
-    font-size: 18px;
-    width: 100%;
+    width: 88%;
     padding: 20px 0;
+    margin: 0 40px;
     color: white;
     background-color: #16DB99;
     border: none;
     border-radius: 4px;
 }
 
+.pay-form {
+    position: fixed;
+    z-index: 1;
+    top: 15em;
+    margin:auto;
+    background-color: #fff;
+    padding: 2em;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.pay-details {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hidden {
+    display: none;
+}
