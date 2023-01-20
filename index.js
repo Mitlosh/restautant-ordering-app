@@ -55,7 +55,7 @@ function getOrderHtml() {
         orderHtml += `
         <div class="order-detail">
             <h2>${item.name} ${item.amount}
-                <span data-remove=${item.id} class="button remove-btn">
+                <span data-remove=${item.id} class="remove-btn">
                     remove
                 </span>
             </h2>        
@@ -96,11 +96,11 @@ function getMenuHtml(){
                 <img class="food-img" src="${meal.image}" alt="pizza-img">
                 <div>
                     <h2>${meal.name}</h2>
-                    <p>${meal.ingredients}</p>
+                    <p>${meal.ingredients.join(', ')}</p>
                     <p>$${meal.price}</p>  
                 </div>  
             </div>
-            <button class="button" data-btn="${meal.id}">+</button>
+            <button data-btn="${meal.id}">+</button>
         </div>
     </div>
         `   

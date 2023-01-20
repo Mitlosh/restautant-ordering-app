@@ -17,7 +17,7 @@ export const menuArray = [
     },
         {
         name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
+        ingredients: ["grain", "hops", "yeast", "water"],
         price: 8,
         image: "/images/item-graphic-3.png",
         amount: 1,
