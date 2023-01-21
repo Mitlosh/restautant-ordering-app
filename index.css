@@ -5,15 +5,16 @@
 body {
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
-    width: 600px;
+    width: 524px;
     border: 1px solid lightgray;
 }
 
 .container{
     padding: 0 40px;
+    width: 100%;
 }
 
-h1, h2, p{
+h1, h2, h3, p{
     margin: 0;
 }
 
@@ -24,6 +25,13 @@ h1 {
 p {
     font-size: 1rem;
     line-height: 1.5em;
+}
+
+input {
+    font-family: inherit;
+    padding: 1em;
+    border: 1px solid #757575;
+    border-radius: 4px;
 }
 
 button {
@@ -94,14 +102,14 @@ header {
 .total-price{
     display: flex;
     justify-content: space-between;
-    padding: 20px 0 40px 0;
+    margin-top: 2em;
 }
 
 .complete-order-btn{
     font-weight: bold;
     width: 100%;
+    margin-top: 1.5em;
     padding: 20px 0;
-    /* margin: 0 40px; */
     color: white;
     background-color: #16DB99;
     border: none;
@@ -109,22 +117,21 @@ header {
 }
 
 .pay-form {
-    position: fixed;
-    z-index: 1;
-    top: 15em;
-    margin:auto;
-    background-color: #fff;
-    padding: 2em;
-    border: 1px solid gray;
-    border-radius: 4px;
-}
-
-.pay-details {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+    width: 444px;
+    gap: 1em;
+    position: fixed;
+    top: 10em;
+    background-color: #fff;   
+    padding: 2em;
+    border-radius: 4px;
+    box-shadow: 0 0 400px #5a6e67;
+}
+
+.pay-title {
+    text-align: center;
+    margin-bottom: 1.5em;
 }
 
 .hidden {
