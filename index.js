@@ -13,13 +13,12 @@ document.addEventListener('click', (e) => {
 function handleAddBtn(foodId){
     const targetMealObj = menuArray.filter(meal => meal.id === foodId)[0]
     const duplicate = orderArray.includes(targetMealObj)
+
     if(!duplicate) orderArray.push(targetMealObj)
     else orderArray.filter(meal => {
-        if (meal.id === foodId) {
-            meal.amount += 1
-        }
+        return meal.id === foodId ? meal.amount ++ : meal.amount
     })
-
+    console.log(orderArray)
     getOrderHtml()
 }
 
@@ -39,13 +38,13 @@ function handleRemoveBtn(foodId) {
     })
     
     orderArray.filter(meal => {
-        if (meal.id === foodId && meal.amount > 0) {
+        if (meal.id === foodId && meal.amount > 1) {
             meal.amount -= 1
-        } else if (meal.amount < 2) {
+        } else if (meal.amount === 1) {
             orderArray.splice(indexToDelete, 1)
+            return orderArray
         }
     })
-
     getOrderHtml()
 }
 
@@ -75,14 +74,14 @@ function getOrderHtml() {
             
         </div>
     `
-    document.getElementById('total-order').innerHTML = totalOrder
+    document.querySelector('.order').innerHTML = totalOrder
 }
 
 const completeOrderBtn = document.querySelector('.complete-order-btn')
 const payForm = document.querySelector('.pay-form')
 
 completeOrderBtn.addEventListener('click', () => {
-    payForm.classList.remove('hidden')
+    if (orderArray.length) payForm.classList.remove('hidden')
 })
 
 function getMenuHtml(){    
