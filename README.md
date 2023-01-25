@@ -7,6 +7,5 @@ With it you can select a meal and make an order.
 
 - [See project live](#)
 - [Scrimba courses](https://scrimba.com/)
-- 
 
 Thanks for watching!
