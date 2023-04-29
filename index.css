@@ -1,139 +1,142 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-    font-family: 'Poppins', sans-serif;
-    width: 524px;
-    border: 1px solid lightgray;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  width: 524px;
+  border: 1px solid lightgray;
 }
 
-.container{
-    padding: 0 40px;
-    width: 100%;
+.container {
+  padding: 0 40px;
+  width: 100%;
 }
 
-h1, h2, h3, p{
-    margin: 0;
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.5em;
+  font-size: 1rem;
+  line-height: 1.5em;
 }
 
 input {
-    font-family: inherit;
-    padding: 1em;
-    border: 1px solid #757575;
-    border-radius: 4px;
+  font-family: inherit;
+  padding: 1em;
+  border: 1px solid #757575;
+  border-radius: 4px;
 }
 
 button {
-    cursor: pointer;
-    display: inline-block;
+  cursor: pointer;
+  display: inline-block;
 }
 
 header {
-    background-image: url('images/bg-img1.jpg');
-    background-size: cover;
-    padding: 30px 0 50px;
-    color: white;
+  background-image: url("images/bg-img1.jpg");
+  background-size: cover;
+  padding: 30px 0 50px;
+  color: white;
 }
 
-.section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid gray;
-    padding: 1.75em 0;
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 1.75em 0;
 }
 
-.food-selection{
-    display: flex;
-    align-items: center;
+.food-selection {
+  display: flex;
+  align-items: center;
 }
 
-.food-img{
-    margin-right: 30px;
+.food-img {
+  margin-right: 30px;
 }
 
-.section button{
-    font-size: 28px;
-    font-family: 'Inter';
-    background-color: white;
-    border-radius: 100%;
-    border: 1px solid #999;
-    padding: 5px 12px;
+.section button {
+  font-size: 28px;
+  font-family: "Inter";
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid #999;
+  padding: 5px 12px;
 }
-.section button:hover{
-    transform: scale(1.1);
-    background-color: whitesmoke;
+.section button:hover {
+  transform: scale(1.1);
+  background-color: whitesmoke;
 }
 
 /* ordering section */
 
-.order{
-    text-align: center;
-    padding: 5em 0 1em 0;
+.order {
+  text-align: center;
+  padding: 5em 0 1em 0;
 }
 
-.order-detail{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0 20px 0;
-    border-bottom: 2px solid gray;
+.order-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0 20px 0;
+  border-bottom: 2px solid gray;
 }
 
-.remove-btn{
-    font-family: 'Arial';
-    font-size: 12px;
-    padding-left: 20px;
-    color: #bbb;
-    cursor: pointer;
+.remove-btn {
+  font-family: "Arial";
+  font-size: 12px;
+  padding-left: 20px;
+  color: #bbb;
+  cursor: pointer;
 }
 
-.total-price{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2em;
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
 }
 
-.complete-order-btn{
-    font-weight: bold;
-    width: 100%;
-    margin-top: 1.5em;
-    padding: 20px 0;
-    color: white;
-    background-color: #16DB99;
-    border: none;
-    border-radius: 4px;
+.complete-order-btn {
+  font-weight: bold;
+  width: 100%;
+  margin-top: 1.5em;
+  padding: 20px 0;
+  color: white;
+  background-color: #16db99;
+  border: none;
+  border-radius: 4px;
 }
 
 .pay-form {
-    display: flex;
-    flex-direction: column;
-    width: 444px;
-    gap: 1em;
-    position: fixed;
-    top: 10em;
-    background-color: #fff;   
-    padding: 2em;
-    border-radius: 4px;
-    box-shadow: 0 0 400px #5a6e67;
+  display: flex;
+  flex-direction: column;
+  width: 444px;
+  gap: 1em;
+  position: fixed;
+  top: 10em;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 4px;
+  box-shadow: 0 0 400px #5a6e67;
 }
 
 .pay-title {
-    text-align: center;
-    margin-bottom: 1.5em;
+  text-align: center;
+  margin-bottom: 1.5em;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
